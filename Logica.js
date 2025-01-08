@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('pedidoID').addEventListener('blur', function() {
         const id = this.value;
-        fetch(`https://sheetdb.io/api/v1/YOUR_SHEET_ID/search?ID=${id}`)
+        fetch(`https://sheetdb.io/api/v1/v38uyhq9gzav1/search?ID=${id}`)
             .then(response => response.json())
             .then(data => {
                 if (data.length > 0) {
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('compraID').addEventListener('blur', function() {
         const id = this.value;
-        fetch(`https://sheetdb.io/api/v1/YOUR_SHEET_ID/search?ID=${id}`)
+        fetch(`https://sheetdb.io/api/v1/v38uyhq9gzav1/search?ID=${id}`)
             .then(response => response.json())
             .then(data => {
                 if (data.length > 0) {
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
             estadoPedido: 'Pendiente'
         };
 
-        fetch('https://sheetdb.io/api/v1/YOUR_SHEET_ID', {
+        fetch('https://sheetdb.io/api/v1/v38uyhq9gzav1', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
             proveedor: document.getElementById('proveedor').value
         };
 
-        fetch('https://sheetdb.io/api/v1/YOUR_SHEET_ID', {
+        fetch('https://sheetdb.io/api/v1/v38uyhq9gzav1', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -81,13 +81,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function updateStock(articulo, cantidad, operation) {
-        fetch('https://sheetdb.io/api/v1/YOUR_STOCK_SHEET_ID')
+        fetch('https://sheetdb.io/api/v1/v38uyhq9gzav1')
             .then(response => response.json())
             .then(stockData => {
                 const item = stockData.find(row => row.articulo === articulo);
                 if (item) {
                     const newCantidad = operation === 'add' ? parseInt(item.cantidad) + parseInt(cantidad) : parseInt(item.cantidad) - parseInt(cantidad);
-                    fetch(`https://sheetdb.io/api/v1/YOUR_STOCK_SHEET_ID/${item.id}`, {
+                    fetch(`https://sheetdb.io/api/v1/v38uyhq9gzav1/${item.id}`, {
                         method: 'PATCH',
                         headers: {
                             'Content-Type': 'application/json'
