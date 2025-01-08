@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Pedidos y Compras</title>
+    <link rel="stylesheet" href="Estilos.css">
+</head>
+<body>
+    <nav>
+        <h1>Gestión de Pedidos y Compras</h1>
+    </nav>
+    <main>
+        <section>
+            <h2>Ingresar Pedido</h2>
+            <form id="pedidoForm">
+                <label for="pedidoID">ID</label>
+                <input type="text" id="pedidoID" placeholder="ID">
+                <label for="fechaSolicitud">Fecha Solicitud</label>
+                <input type="date" id="fechaSolicitud" placeholder="Fecha Solicitud" readonly>
+                <label for="articulo">Artículo</label>
+                <input type="text" id="articulo" placeholder="Artículo" readonly>
+                <label for="descripcion">Descripción</label>
+                <input type="text" id="descripcion" placeholder="Descripción" readonly>
+                <label for="personalizacion">Personalización</label>
+                <input type="text" id="personalizacion" placeholder="Personalización">
+                <label for="precio">Precio</label>
+                <input type="number" id="precio" placeholder="Precio">
+                <label for="cantidad">Cantidad</label>
+                <input type="number" id="cantidad" placeholder="Cantidad">
+                <label for="cliente">Cliente</label>
+                <input type="text" id="cliente" placeholder="Cliente">
+                <label for="numeroContacto">Número de Contacto</label>
+                <input type="text" id="numeroContacto" placeholder="Número de Contacto">
+                <label for="fechaEntrega">Fecha de Entrega</label>
+                <input type="date" id="fechaEntrega" placeholder="Fecha de Entrega">
+                <input type="hidden" id="estadoPedido" value="Pendiente">
+                <button type="submit">Agregar Pedido</button>
+            </form>
+        </section>
+        <section>
+            <h2>Ingresar Compra</h2>
+            <form id="compraForm">
+                <label for="compraID">ID</label>
+                <input type="text" id="compraID" placeholder="ID">
+                <label for="fechaCompra">Fecha de Compra</label>
+                <input type="date" id="fechaCompra" placeholder="Fecha de Compra" readonly>
+                <label for="compraArticulo">Artículo</label>
+                <input type="text" id="compraArticulo" placeholder="Artículo" readonly>
+                <label for="compraDescripcion">Descripción</label>
+                <input type="text" id="compraDescripcion" placeholder="Descripción" readonly>
+                <label for="compraPrecio">Precio</label>
+                <input type="number" id="compraPrecio" placeholder="Precio">
+                <label for="compraCantidad">Cantidad</label>
+                <input type="number" id="compraCantidad" placeholder="Cantidad">
+                <label for="proveedor">Proveedor</label>
+                <input type="text" id="proveedor" placeholder="Proveedor">
+                <button type="submit">Agregar Compra</button>
+            </form>
+        </section>
+        <div id="data"></div>
+    </main>
+    <script src="Logica.js"></script>
+</body>
+</html>
